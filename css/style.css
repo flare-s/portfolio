@@ -24,6 +24,7 @@ html {
     box-sizing: border-box;
     font-size: 62.50%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
