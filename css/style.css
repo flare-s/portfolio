@@ -1,13 +1,12 @@
 /* Config */
 :root {
-    --teal: rgb(93, 190, 190);
+    --gold: rgb(195, 165, 29);
     --purple: rgb(82, 40, 138);
-    --teal-transparent: rgba(90, 161, 161, .5);
-    --purple-transparent: rgba(106, 54, 173, .5);
+    --purple-light: rgb(184, 181, 188);
     --white: rgb(255, 255, 255);
     --white-fade: rgba(255, 255, 255, .2);
     --dark-blue: rgb(17, 26, 44);
-    --transparent: rgba(0, 0, 0, .2);
+    --shade: rgba(0, 0, 0, .2);
     --overlay: rgba(0, 0, 0, .7);
 }
 
@@ -42,15 +41,15 @@ body {
 h2 {
     position: relative;
     font-size: 3rem;
-    color: var(--white);
+    color: var(--purple-light);
     margin: 3rem 0;
     font-weight: 300;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 1px 1px  var(--purple),
-     1.5px 1.5px  var(--teal),
+     1.5px 1.5px  var(--gold),
      2px 2px  var(--purple),
-     2.5px 2.5px  var(--teal),
+     2.5px 2.5px  var(--gold),
      3px 3px  var(--purple)
     ;
 
@@ -64,8 +63,8 @@ h2::before {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--teal);
-    background-image: linear-gradient(to bottom right, var(--teal), var(--purple));
+    background-color: var(--gold);
+    background-image: linear-gradient(to bottom right, var(--gold), var(--purple));
     border-radius: 10px;
 }
 
@@ -78,8 +77,15 @@ h2::after {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--purple);
-    background-image: linear-gradient(to bottom right, var(--teal), var(--purple));
+    background-image: linear-gradient(to bottom right, var(--gold), var(--purple));
     border-radius: 10px;
+}
+
+h3 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-weight: 300;
 }
 
 img {
@@ -117,7 +123,7 @@ section {
 
 
 p:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
 
 abbr {
@@ -136,8 +142,8 @@ abbr {
     border-radius: 50%;
     height: 30px;
     width: 30px;
-    background-color: teal;
-    background-image: linear-gradient(to bottom right, var(--teal), var(--purple));
+    background-color: gold;
+    background-image: linear-gradient(to bottom right, var(--gold), var(--purple));
     z-index: 2000;
     animation: bubble 1s linear forwards;
     pointer-events: none;
@@ -153,16 +159,16 @@ abbr {
 }
 
 .btn {
-    background-image: linear-gradient(to bottom right, var(--teal), var(--purple));
+    border: 1px solid var(--white-fade);
 }
 
-.btn--ghost {
+ /* .btn--ghost {
     border: 1px solid var(--purple);
-}
+} */
 
-.btn--ghost:hover {
+.btn:hover {
     background-color: var(--dark-blue);
-}
+} */
 
 /* header */
 
@@ -230,7 +236,7 @@ abbr {
     justify-content: center;
     align-items: center;
     transition: visibility .3s linear, right .3s linear;
-    background-color: var(--transparent);
+    background-color: var(--shade);
     border-left: 1px solid var(--white-fade);
     backdrop-filter: blur(10px);
     visibility: hidden;
@@ -250,14 +256,49 @@ abbr {
     align-items: center;
 }
 .nav__list li:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
+
 
 .nav__list a {
     display: inline-block;
     color: var(--white);
     padding: 5px 10px;
     text-transform: uppercase;
+    position: relative;
+}
+
+
+.nav__list a::after,
+.nav__list a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-image: linear-gradient(to bottom right, var(--purple), var(--gold));
+    left: 0;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: transform .3s linear;
+}
+
+.nav__list a::after {
+    top: 0;
+    background-color: var(--purple);
+    transform-origin: left;
+    
+}
+.nav__list a::before {
+    bottom: 0;
+    background-color: var(--gold);
+    transform-origin: right;
+}
+.nav__list a:hover::after,
+.nav__list a:hover::before,
+.nav__list a:focus::after,
+.nav__list a:focus::before {
+    transform: scale(1);
+    
 }
 
 
@@ -349,7 +390,7 @@ abbr {
     margin-left: auto;
     padding: 1.5rem;
     border-radius: 1rem;
-    background-color: var(--transparent);
+    background-color: var(--shade);
     min-height: 40rem;
     overflow: hidden;
     text-align: center;
@@ -360,7 +401,7 @@ abbr {
     position: absolute;
     width: 100px;
     height: 200%;
-    background-image: linear-gradient(to bottom, var(--teal), var(--purple));
+    background-image: linear-gradient(to bottom, var(--gold), var(--purple));
     border-radius: 10px;
     z-index: -2;
     animation: rotate 5s linear infinite;
@@ -406,7 +447,7 @@ abbr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--transparent);
+    background-color: var(--shade);
     backdrop-filter: blur(10px);
     z-index: -1;
 }
@@ -419,14 +460,14 @@ abbr {
     width: 35rem;
     height: 35rem;
     border-radius: 50%;
-    background-image: linear-gradient(to bottom left, var(--teal), var(--purple));
+    background-image: linear-gradient(to bottom left, var(--gold), var(--purple));
     z-index: -1;
 }
 
 /* projects */
 
 .projects {
-    background-color: var(--transparent);
+    background-color: var(--shade);
 }
 
 
@@ -440,13 +481,12 @@ abbr {
 
 .project {
     min-height: 28rem;
-    background-color: var(--transparent);
+    background-color: var(--shade);
     border: 4px solid var(--dark-blue);
     border-radius: 10px;
     padding: 10px;
-    /* min-width: 28rem; */
     max-width: 35rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     transform: scale(0);
     transform-origin: center;
     transition: transform .3s linear .3s;
@@ -478,8 +518,8 @@ abbr {
     margin-top: auto;
 }
 
-.project__buttons a:first-child {
-    margin-bottom: 1rem;
+.project__buttons a:nth-child(2) {
+    margin-top: 1.5rem;
 }
 
 
@@ -579,7 +619,7 @@ abbr {
         align-items: center;
     }
     .nav__list li:not(:last-child) {
-        margin-right: 10px;
+        margin-right: 1.5rem;
         margin-bottom: 0;
     }
     
