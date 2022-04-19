@@ -2,7 +2,6 @@
 :root {
     --gold: rgb(195, 165, 29);
     --purple: rgb(82, 40, 138);
-    --purple-light: rgb(184, 181, 188);
     --white: rgb(255, 255, 255);
     --white-fade: rgba(255, 255, 255, .2);
     --dark-blue: rgb(17, 26, 44);
@@ -42,7 +41,7 @@ body {
 h2 {
     position: relative;
     font-size: 3rem;
-    color: var(--purple-light);
+    color: var(--white);
     margin: 3rem 0;
     font-weight: 300;
     text-transform: uppercase;
@@ -477,7 +476,7 @@ abbr {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    perspective: 500px;
+    perspective: 1000px;
 }
 
 .project {
