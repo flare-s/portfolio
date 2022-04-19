@@ -31,9 +31,9 @@ window.addEventListener("mousemove", (e) => {
     newTrail.style.left = `${e.clientX}px;`;
     newTrail.style.top = `${e.clientY}px;`;
     newTrail.setAttribute("style",`top: ${e.clientY - 15}px; left: ${e.clientX - 15}px;`);
+    document.body.prepend(newTrail);
     //deleting the created element when the animation ends
     newTrail.onanimationend = () => newTrail.remove();
-    document.body.prepend(newTrail);
 
 });
 
@@ -125,7 +125,6 @@ const tiltEl = (e, el) => {
         // setting the limit of the tilt effect when the mouse move on the element
         let rotateX = (15 * mouseY / (targetHeight/2));
         let rotateY = (-15 * mouseX / (targetWidth/2));
-        let scaleVals = getScaleVals(target)
         target.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
 
