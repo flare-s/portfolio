@@ -1,3 +1,5 @@
+/*import fonts*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Raleway:wght@300;700&display=swap');
 /* Config */
 :root {
     --gold: rgb(195, 165, 29);
@@ -27,6 +29,7 @@ html {
 }
 
 body {
+    font-family: 'EB Garamond', serif;
     font-size: 1.6rem;
     background-color: var(--dark-blue);
     letter-spacing: 1px;
@@ -37,6 +40,9 @@ body {
 
 
 
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif;
+}
 
 h2 {
     position: relative;
@@ -487,24 +493,14 @@ abbr {
     padding: 10px;
     max-width: 35rem;
     margin-bottom: 1.5rem;
-    transform: scale(0);
-    transform-origin: center;
-    transition: transform .3s linear .3s;
-}
-
-.project.active {
-    transform: scale(1);
-    transition: transform .5s linear;
-}
-
-.project__content {
     opacity: 0;
     transition: opacity .3s linear;
 }
-.active .project__content {
+
+.project.active {
     opacity: 1;
-    transition: opacity .3s linear .5s;
 }
+
 
 .project__content {
     min-height: 100%;

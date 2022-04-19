@@ -107,7 +107,7 @@ let sectionObserver = new IntersectionObserver(entries => {
             entry.target.classList.remove("active");
         }
     }
-}, null);
+}, {rootMargin: "-80px"});
 
 
 // tilt effict on elements when the mouse is moved on them
@@ -125,8 +125,8 @@ const tiltEl = (e, el) => {
         // setting the limit of the tilt effect when the mouse move on the element
         let rotateX = (15 * mouseY / (targetHeight/2));
         let rotateY = (-15 * mouseX / (targetWidth/2));
-
-        target.style.transform = `scale(1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        let scaleVals = getScaleVals(target)
+        target.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
 
 
@@ -136,7 +136,7 @@ const tiltEl = (e, el) => {
 project.forEach(el => { 
     sectionObserver.observe(el);
     el.addEventListener("mousemove", (e) => tiltEl(e, el));
-    el.addEventListener("mouseleave", () => el.style.transform = `scale(1) rotateX(0deg) rotateY(0deg)`);
+    el.addEventListener("mouseleave", () => el.style.transform = `rotateX(0deg) rotateY(0deg)`);
 
 })
 
