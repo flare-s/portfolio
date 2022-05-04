@@ -28,8 +28,6 @@ window.addEventListener("mousemove", (e) => {
     let newTrail = document.createElement("div");
     newTrail.setAttribute("aria-hidden", "true");
     newTrail.classList.add("trail");
-    newTrail.style.left = `${e.clientX}px;`;
-    newTrail.style.top = `${e.clientY}px;`;
     newTrail.setAttribute("style",`top: ${e.clientY - 15}px; left: ${e.clientX - 15}px;`);
     document.body.prepend(newTrail);
     //deleting the created element when the animation ends
