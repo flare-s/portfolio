@@ -168,13 +168,10 @@ abbr {
     border: 1px solid var(--white-fade);
 }
 
- /* .btn--ghost {
-    border: 1px solid var(--purple);
-} */
 
 .btn:hover {
     background-color: var(--dark-blue);
-} */
+} 
 
 /* header */
 

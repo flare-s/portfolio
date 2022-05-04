@@ -66,7 +66,7 @@ const handleMenu = (state) => {
     }
 }
 
-// remove the mobile nav functionality on the media query provded
+// remove the mobile nav functionality on the media query provided
 const handleViewport = (mq) => {
     if (mq.matches) {
         handleMenu("close");
