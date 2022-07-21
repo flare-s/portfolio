@@ -1,10 +1,62 @@
 const navButton = document.querySelector(".nav__toggle");
 const navList = document.querySelector(".nav__list");
 const project = document.querySelectorAll(".project");
-const projects = document.querySelector(".projects");
+const projectsSection = document.querySelector(".projects");
+const projectsList = document.querySelector(".projects__list");
 const overlay = document.querySelector(".overlay");
 const header = document.querySelector(".header");
 let lastScroll;
+
+
+
+const projects = [
+    {
+        title: "Heavenly Bites",
+        srcCode: "https://github.com/flare-s/heavenly-bites-code",
+        livePage: "https://flare-s.github.io/heavenly-bites-code/"
+    },
+    {
+        title: "Security Agency",
+        srcCode: "https://github.com/flare-s/security-code",
+        livePage: "https://flare-s.github.io/security-code/"
+    },
+    {
+        title: "Velanova Studio",
+        srcCode: "https://github.com/flare-s/design-studio-code",
+        livePage: "https://flare-s.github.io/design-studio-code/"
+    },
+    {
+        title: "Weather App",
+        srcCode: "https://github.com/flare-s/weather-app",
+        livePage: "https://flare-s.github.io/weather-app/"
+    },
+    {
+        title: "Color Generator",
+        srcCode: "https://github.com/flare-s/colors-generator",
+        livePage: "https://flare-s.github.io/colors-generator/"
+    },
+    {
+        title: "Wordle",
+        srcCode: "https://github.com/flare-s/wordle",
+        livePage: "https://flare-s.github.io/wordle/"
+    },
+    {
+        title: "SEO Solutions",
+        srcCode: "https://github.com/flare-s/seo-solutions",
+        livePage: "https://flare-s.github.io/seo-solutions/"
+    },
+    {
+        title: "Art & design",
+        srcCode: "https://github.com/flare-s/blog-page",
+        livePage: "https://flare-s.github.io/blog-page/"
+    },
+    {
+        title: "Expenses Tracker",
+        srcCode: "https://github.com/flare-s/expenses-tracker",
+        livePage: "https://flare-s.github.io/expenses-tracker/"
+    },
+]
+
 
 
 
@@ -130,12 +182,32 @@ const tiltEl = (e, el) => {
     
 }
 
-project.forEach(el => { 
-    sectionObserver.observe(el);
-    el.addEventListener("mousemove", (e) => tiltEl(e, el));
-    el.addEventListener("mouseleave", () => el.style.transform = `rotateX(0deg) rotateY(0deg)`);
+projects.forEach(el => {
+    let li = document.createElement("li");
+    li.classList.add("project");
+    li.innerHTML = `
+        <div class="project__overlay" aria-hidden="true"></div>
+        <div class="project__content">
+            <h3 class="project__title">${el.title}</h3>
+            <div class="project__buttons">
+                <a href="${el.srcCode}" target="_blank" class="btn">Source code</a>
+                <a href="${el.livePage}" target="_blank" class="btn">Live version</a>
+            </div>
+        </div>
+    `;
+    sectionObserver.observe(li);
+    li.addEventListener("mousemove", (e) => tiltEl(e, li));
+    li.addEventListener("mouseleave", () => li.style.transform = `rotateX(0deg) rotateY(0deg)`);
 
+    projectsList.append(li);
 })
+
+// project.forEach(el => { 
+//     sectionObserver.observe(el);
+//     el.addEventListener("mousemove", (e) => tiltEl(e, el));
+//     el.addEventListener("mouseleave", () => el.style.transform = `rotateX(0deg) rotateY(0deg)`);
+
+// })
 
 
 
