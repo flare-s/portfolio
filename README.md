@@ -1,5 +1,3 @@
-# application
-CAF application website
-My applcation website for CAF. On this website, I showcase most of my projects that I've done while learning Web Development.
+# My portfolio
 
-Live website: https://flare-s.github.io/application/
+Here I have all the projects I have done since I started coding.
