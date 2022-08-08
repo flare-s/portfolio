@@ -53,6 +53,11 @@ const projects = [
     srcCode: "https://github.com/flare-s/budget-tracker",
     livePage: "https://flare-s.github.io/budget-tracker/",
   },
+  {
+    title: "Expenses Tracker",
+    srcCode: "https://github.com/flare-s/expenses-tracker",
+    livePage: "https://flare-s.github.io/expenses-tracker/",
+  },
 ];
 
 // Hiding the navbar when scrolling down and showing it when scrolling up
